@@ -93,6 +93,7 @@ body {
     color: black;
     overflow-x: hidden;
     position: relative;
+
 }
 
 nav {
@@ -217,6 +218,7 @@ nav {
     animation: 1.8s appear forwards;
 }
 
+
 @keyframes appear {
     0% {
         opacity: 0;
@@ -234,6 +236,7 @@ nav {
 .center {
     margin-inline: auto;
 }
+
 
 #link-warning {
     background-color: rgb(65, 1, 65);
@@ -269,8 +272,9 @@ nav {
     html {
         font-size: 14px;
     }
+
     #link-warning {
         width: 93%;
-        margin-inline:auto;
+        margin-inline: auto;
     }
 }

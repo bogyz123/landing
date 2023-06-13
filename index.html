@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="sass/index.css">
     <script src="index.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li id="SS" onclick="openUrl('https://www.github.com/bogyz123/sharepictures')">Sharepictures</li>
-            <li id="CX" onclick="openUrl('https://www.github.com/bogyz123/codebox')">Codebox</li>
-            <li id="SNKRS" onclick="openUrl('https://www.github.com/bogyz123/SNKRS')">SNKRS</li>
-            <li id="LY" onclick="openUrl('https://www.github.com/bogyz123/linkify')">Linkify</li>
-            <li id="CE" onclick="openUrl('https://www.github.com/bogyz123/chattie')">Chattie</li>
-        </ul>
-    </nav>
+    <div id="burger" onclick="handleMenu()">
+        <i class="fa fa-solid fa-bars fa-lg"></i>
+    </div>
+    <ul class="project-list">
+        <li id="SS" onclick="openUrl('https://www.github.com/bogyz123/sharepictures')">Sharepictures</li>
+        <li id="CX" onclick="openUrl('https://www.github.com/bogyz123/codebox')">Codebox</li>
+        <li id="SNKRS" onclick="openUrl('https://www.github.com/bogyz123/SNKRS')">SNKRS</li>
+        <li id="LY" onclick="openUrl('https://www.github.com/bogyz123/linkify')">Linkify</li>
+        <li id="PC" onclick="openUrl('https://www.github.com/bogyz123/proxychecker')">ProxyChecker API</li>
+        <li id="CE" onclick="openUrl('https://www.github.com/bogyz123/chattie')">Chattie</li>
+    </ul>
     <div class="about">
         <div class="about__content">
             <p class="about__name">I'M <br> BOGDAN ĐAKOVIĆ</p>
@@ -33,7 +36,7 @@
                 <br>
                 Currently, I'm not in college and I've graduated from Technical High School in the city of Loznica.
                 <br>
-                I was born on third December of 2003 which makes me <span class="auto-write">19 years old.</span>
+                I was born on third December of 2003 - <span class="auto-write">19 years old.</span>
 
                 <br>
                 I have completed a couple of personal projects showcasing my React & other libraries' skills! You can
@@ -58,19 +61,19 @@
         <code
             class="center">These are the technologies that I've used throughout my projects! (You can hover over to see what projects are using them)</code>
         <ul id="skills__list">
-            <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE'])"
-                onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE'])">
+            <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])"
+                onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
                 HTML & CSS
                 <div class="stars">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
                 </div>
             </li>
-            <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE'])"
-                onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE'])">
+            <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])"
+                onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
                 JavaScript
                 <div class="stars">
                     <i class="fa fa-star"></i>
@@ -93,7 +96,8 @@
                 </div>
             </li>
 
-            <li class="skill" onmouseover="popProject('pop', ['LY'])" onmouseleave="popProject('unpop', ['LY'])">
+            <li class="skill" onmouseover="popProject('pop', ['LY', 'PC'])"
+                onmouseleave="popProject('unpop', ['LY', 'PC'])">
                 Node &
                 Express
                 <div class="stars">
@@ -132,7 +136,7 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
                 </div>
             </li>
             <li class="skill" onmouseover="popProject('pop', ['SNKRS', 'LY'])"
@@ -151,6 +155,16 @@
         <code id="link-url" class="center">this will open <span></span></code>
         <button class="link-choice" onclick="handleLink('success', 'https://www.github.com/bogyz123')">we good</button>
         <button class="link-choice" onclick="handleLink('failure')">later</button>
+    </div>
+    <div class="project-list" id="menu">
+
+        <li id="SS" onclick="openUrl('https://www.github.com/bogyz123/sharepictures')">Sharepictures</li>
+        <li id="CX" onclick="openUrl('https://www.github.com/bogyz123/codebox')">Codebox</li>
+        <li id="SNKRS" onclick="openUrl('https://www.github.com/bogyz123/SNKRS')">SNKRS</li>
+        <li id="LY" onclick="openUrl('https://www.github.com/bogyz123/linkify')">Linkify</li>
+        <li id="PC" onclick="openUrl('https://www.github.com/bogyz123/proxychecker')">ProxyChecker API</li>
+        <li id="CE" onclick="openUrl('https://www.github.com/bogyz123/chattie')">Chattie</li>
+
     </div>
 </body>
 

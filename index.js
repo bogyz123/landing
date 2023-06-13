@@ -22,7 +22,7 @@ const popProject = (popType, projects) => {
             }
             break;
         }
-        case 'unpop': { // I just made this word up
+        case 'unpop': {
             for (let i = 0; i < projects.length; i++) {
                 document.getElementById(projects[i]).style.scale = '1';
                 document.getElementById(projects[i]).style.padding = '0';
@@ -31,7 +31,6 @@ const popProject = (popType, projects) => {
             break;
         }
         default: {
-            // Yeah this aint ever getting reached :D...
             break;
         }
     }
@@ -50,10 +49,18 @@ const handleLink = (status) => {
     if (status === 'failure') {
         document.getElementById("link-warning").style.display = 'none';
         return;
-        // I should've obviously cached this element above into a variable, but it's null for some reason, will fix later
     }
     else {
         document.getElementById("link-warning").style.display = 'none';
         window.open(urlToOpen, "_blank");
+    }
+}
+const handleMenu = () => {
+    const menu = document.getElementById("menu");
+    if (menu.style.display === 'none') {
+        menu.style.display = 'block';
+    }
+    else {
+        menu.style.display = 'none';
     }
 }
