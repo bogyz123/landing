@@ -44,13 +44,18 @@ body {
 #burger {
   color: white;
   cursor: pointer;
-  margin-left: auto;
+  right: 0;
   padding: 15px;
   display: none;
+  position: fixed;
+  z-index: 1000;
 }
 
 #menu {
   position: fixed;
+  text-align: center;
+  display: none;
+  padding: 10px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -297,13 +302,6 @@ body {
   border: 2px solid lime;
   border-radius: 5px;
   cursor: pointer;
-}
-#menu {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  display: none;
-  padding:10px;
 }
 
 .link-choice:nth-of-type(1):hover {

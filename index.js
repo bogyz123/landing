@@ -1,6 +1,6 @@
 
 const scaleNav = (action) => {
-    const nav = document.getElementsByTagName("nav")[0];
+    const nav = document.getElementsByClassName("project-list")[0];
     switch (action) {
         case 'scale': {
             nav.style.scale = '1.5'
@@ -57,7 +57,8 @@ const handleLink = (status) => {
 }
 const handleMenu = () => {
     const menu = document.getElementById("menu");
-    if (menu.style.display === 'none') {
+    console.log(menu.style.display);
+    if (menu.style.display === 'none' || menu.style.display === '') {
         menu.style.display = 'block';
     }
     else {
