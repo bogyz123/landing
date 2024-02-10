@@ -10,8 +10,6 @@ body {
   flex-direction: column;
 }
 
-
-
 .project-list {
   transition: scale 0.5s ease-in-out;
   list-style: none;
@@ -61,7 +59,7 @@ body {
   transform: translate(-50%, -50%);
   background-color: purple;
   color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   border-radius: 10px;
 }
 
@@ -101,15 +99,12 @@ body {
   padding: 1rem 2rem;
   margin-inline: auto;
   word-wrap: break-word;
-  animation-name: slide-in;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  opacity: 0;
   display: grid;
   grid-template-columns: 20% 1fr;
   padding: 2rem 2rem;
   -moz-column-gap: 2rem;
   column-gap: 2rem;
+  position: relative;
 }
 
 @keyframes slide-in {
