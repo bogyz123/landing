@@ -1,16 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 
+:root {
+  --bg-col: rgb(89, 4, 123);
+  --card-gradient: radial-gradient(circle, rgb(52, 19, 93) 10%, rgb(53, 7, 57) 100%);
+  --card-border: 1px solid hotpink;
+}
+.darkmode {
+  --bg-col: linear-gradient(to bottom, hsla(267, 60%, 8%, 1), hsla(240, 40%, 6%, 1));
+  --card-gradient: radial-gradient(circle, hsla(267, 96%, 11%, 1) 10%, hsla(297, 60%, 7%, 1) 100%);
+  --card-border: 1px solid crimson;
+}
+.lightmode {
+  --bg-col: rgb(89, 4, 123);
+  --card-gradient: radial-gradient(circle, rgb(52, 19, 93) 10%, rgb(53, 7, 57) 100%);
+  --card-border: 1px solid hotpink;
+}
 body {
-  background-color: purple;
+  background: var(--bg-col);
   color: black;
   overflow-x: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.darkmode {
+  --bg-col: linear-gradient(to bottom, hsla(267, 60%, 8%, 1), hsla(240, 40%, 6%, 1));
+  --card-gradient: radial-gradient(circle, hsla(267, 96%, 11%, 1) 10%, hsla(297, 60%, 7%, 1) 100%);
 }
 
-
+.lightmode {
+  --bg-col: rgb(89, 4, 123);
+  --card-gradient: radial-gradient(circle, rgb(52, 19, 93) 10%, rgb(53, 7, 57) 100%);
+}
 
 .project-list {
   transition: scale 0.5s ease-in-out;
@@ -35,6 +59,7 @@ body {
   color: white;
   transition: scale 0.5s ease-in-out, margin 0.5s ease-in-out;
   padding: 5px;
+  font-size: clamp(12px, 0.8vw, 24px);
 }
 
 .project-list li:hover {
@@ -59,9 +84,9 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: purple;
+  background-color: rgb(52, 19, 93);
   color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   border-radius: 10px;
 }
 
@@ -73,7 +98,6 @@ body {
   bottom: 0;
   width: 0;
   height: 2px;
-  transition: width 0.2s ease-in;
 }
 
 .project-list li:hover::before {
@@ -93,7 +117,8 @@ body {
 
 .about {
   background: rgb(65, 4, 52);
-  background: linear-gradient(90deg, rgb(65, 4, 52) 44%, rgb(30, 4, 41) 100%);
+  background: var(--card-gradient);
+  border: var(--card-border);
   font-family: "Montserrat", sans-serif;
   color: white;
   border-radius: 0.5rem;
@@ -170,7 +195,7 @@ body {
 
 .about__skills {
   background: rgb(65, 4, 52);
-  background: linear-gradient(90deg, rgb(65, 4, 52) 44%, rgb(30, 4, 41) 100%);
+  background: var(--card-gradient);
   font-family: "Montserrat", sans-serif;
   color: white;
   border-radius: 0.5rem;
@@ -185,6 +210,8 @@ body {
   display: flex;
   position: relative;
   flex-direction: column;
+  transition: background 0.3s;
+  border: var(--card-border);
 }
 
 @keyframes slide-in {
@@ -337,6 +364,34 @@ body {
   width: 44px;
   height: 3px;
 }
+#toggler {
+  position: absolute;
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+}
+#toggler button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+#toggler button img {
+  width: 25px;
+  height: 25px;
+  left: 2px;
+  top: 2px;
+  position: absolute;
+  transition: opacity 0.5s ease;
+}
+#moon {
+  opacity: 0;
+}
+#sun {
+  opacity: 1;
+}
 
 @media screen and (max-width: 970px) {
   html {
@@ -348,5 +403,4 @@ body {
     margin-inline: auto;
   }
 }
-
 /*# sourceMappingURL=index.css.map */
