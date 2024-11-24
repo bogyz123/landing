@@ -75,3 +75,15 @@ const toggleDarkMode = () => {
     document.getElementById("moon").style.opacity = "0";
   }
 };
+const shakeText = () => {
+  const text = document.getElementById("shaker");
+  text.style.transform = "translateX(50%)";
+  text.style.transform = "translateX(0%)";
+  text.style.transform = "translateX(50%)";
+  text.style.transform = "translateX(50%)";
+};
+window.onload = () => {
+  setInterval(() => {
+    shakeText();
+  }, 1000);
+};

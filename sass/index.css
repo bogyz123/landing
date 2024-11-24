@@ -9,12 +9,12 @@
 .darkmode {
   --bg-col: linear-gradient(to bottom, hsla(267, 60%, 8%, 1), hsla(240, 40%, 6%, 1));
   --card-gradient: radial-gradient(circle, hsla(267, 96%, 11%, 1) 10%, hsla(297, 60%, 7%, 1) 100%);
-  --card-border: 1px solid crimson;
+  --card-border: 2px solid purple;
 }
 .lightmode {
   --bg-col: rgb(89, 4, 123);
   --card-gradient: radial-gradient(circle, rgb(52, 19, 93) 10%, rgb(53, 7, 57) 100%);
-  --card-border: 1px solid hotpink;
+  --card-border: 2px solid hotpink;
 }
 body {
   background: var(--bg-col);
@@ -23,8 +23,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0;
-  margin: 0;
+  padding-bottom: 15px;
 }
 .darkmode {
   --bg-col: linear-gradient(to bottom, hsla(267, 60%, 8%, 1), hsla(240, 40%, 6%, 1));
@@ -116,7 +115,6 @@ body {
 }
 
 .about {
-  background: rgb(65, 4, 52);
   background: var(--card-gradient);
   border: var(--card-border);
   font-family: "Montserrat", sans-serif;
@@ -317,6 +315,7 @@ body {
   left: 10px;
   bottom: 10px;
   gap: 5px;
+  border: var(--card-border);
 }
 
 .link-choice:nth-of-type(1) {
@@ -402,5 +401,8 @@ body {
     width: 93%;
     margin-inline: auto;
   }
+}
+#shaker {
+  transition: color 0.5s ease;
 }
 /*# sourceMappingURL=index.css.map */
