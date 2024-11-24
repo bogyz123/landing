@@ -403,6 +403,26 @@ body {
   }
 }
 #shaker {
-  transition: color 0.5s ease;
+  animation: shake 2s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
 }
+@keyframes shake {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 /*# sourceMappingURL=index.css.map */
