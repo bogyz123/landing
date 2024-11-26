@@ -39,10 +39,18 @@ const unpop = (project) => {
   document.getElementById(project).style.scale = "1";
   document.getElementById(project).style.margin = "0";
 };
-const openUrl = (url) => {
-  document.getElementById("link-warning").style.display = "flex";
-  document.getElementById("link-url").textContent = "this will open " + url;
+const openUrl = async (url, caller) => {
   urlToOpen = url;
+  const item = caller.closest(".project-list-item").querySelector(".project-list-item-actions");
+  if (item.style.display === "flex") {
+    item.style.display = "none";
+  } else {
+    item.style.display = "flex";
+  }
+};
+const openWebsite = (website) => {
+  document.getElementById("link-warning").style.display = "flex";
+  document.getElementById("link-url").textContent = "this will open " + website;
 };
 const handleLink = (status) => {
   if (status === "failure") {
@@ -74,4 +82,49 @@ const toggleDarkMode = () => {
     document.getElementById("sun").style.opacity = "1";
     document.getElementById("moon").style.opacity = "0";
   }
+};
+
+const previewWebsite = async (website) => {
+  let data = null;
+  if (website) {
+    try {
+      const response = await fetch("./websiteDescriptions.json");
+      if (response.ok) {
+        data = await response.json();
+      }
+    } catch (error) {
+      console.error("Error fetching website data:", error);
+    }
+  }
+  const previewContainer = document.getElementById("project-preview-container");
+  const technologyContainer = document.getElementById("project-preview-technologies");
+  const previewIFrame = document.getElementsByTagName("iframe")[0];
+  const sademoji = document.getElementById("project-preview-sademoji");
+  if (!data[website].hasWebsite) {
+    previewIFrame.style.display = "none";
+    sademoji.style.display = "block";
+    previewContainer.querySelector("code").innerText = "This project has no website.";
+  } else {
+    previewIFrame.style.display = "block";
+    sademoji.style.display = "none";
+  }
+  previewIFrame.setAttribute("src", data[website].url);
+  previewContainer.querySelector("h1").textContent = data[website].title;
+  previewContainer.querySelector("#project-preview-description").textContent = data[website].description;
+
+  const technologiesUsed = [...data[website].technologies];
+  technologiesUsed.map((technology, i) => {
+    let techLi = document.createElement("li");
+    techLi.innerHTML = technology;
+    technologyContainer.appendChild(techLi);
+  });
+  previewContainer.style.display = "flex";
+};
+const closePreview = () => {
+  let container = document.getElementById("project-preview-container");
+  container.style.display = "none";
+  container.querySelector("h1").textContent = null;
+  container.querySelector("#project-preview-description").textContent = null;
+  container.querySelector("ul").innerHTML = null;
+  container.querySelector("code").innerHTML = null;
 };

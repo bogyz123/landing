@@ -14,15 +14,74 @@
       <i class="fa fa-solid fa-bars fa-lg"></i>
     </div>
     <ul class="project-list">
-      <li id="SS" onclick="openUrl('https://www.github.com/bogyz123/sharepictures')">Sharepictures</li>
-      <li id="CX" onclick="openUrl('https://www.github.com/bogyz123/codebox')">Codebox</li>
-      <li id="SNKRS" onclick="openUrl('https://www.github.com/bogyz123/SNKRS')">SNKRS</li>
-      <li id="LY" onclick="openUrl('https://www.github.com/bogyz123/urlshort')">Linkify</li>
-      <li id="PC" onclick="openUrl('https://www.github.com/bogyz123/proxyworks')">ProxyChecker API</li>
-      <li id="KR" onclick="openUrl('https://www.github.com/bogyz123/kinors')">KinoRS</li>
-      <li id="IL" onclick="openUrl('https://www.github.com/bogyz123/instalock')">Instalock (<span style="color: orangered;">C#</span>)</li>
-      <li id="MG" onclick="openUrl('https://www.github.com/bogyz123/memgo')">MemGO (<span style="color: orangered;">GOLANG</span>)</li>
+      <div class="project-list-item">
+        <li id="SS" onclick="openUrl('https://www.github.com/bogyz123/sharepictures', this)">Sharepictures</li>
+        <div class="project-list-item-actions">
+          <button onclick="openWebsite('https://www.github.com/bogyz123/sharepictures')">Open website</button>
+          <button onclick="previewWebsite('sharepictures')" data-project="sharepictures">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item">
+        <li id="CX" onclick="openUrl('https://www.github.com/bogyz123/codebox', this)">Codebox</li>
+        <div class="project-list-item-actions">
+          <button onclick="openWebsite('https://www.github.com/bogyz123/codebox')">Open website</button>
+          <button onclick="previewWebsite('codebox')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item">
+        <li id="SNKRS" onclick="openUrl('https://www.github.com/bogyz123/SNKRS', this)">SNKRS</li>
+        <div class="project-list-item-actions">
+          <button onclick="openWebsite('https://www.github.com/bogyz123/snkrs')">Open website</button>
+          <button onclick="previewWebsite('snkrs')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item">
+        <li id="LY" onclick="openUrl('https://www.github.com/bogyz123/urlshort', this)">Linkify</li>
+        <div class="project-list-item-actions">
+          <button onclick="openWebsite('https://www.github.com/bogyz123/snkrs')">Open website</button>
+          <button onclick="previewWebsite('linkify')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item">
+        <li id="PC" onclick="openUrl('https://www.github.com/bogyz123/proxyworks', this)">ProxyChecker API</li>
+        <div class="project-list-item-actions">
+          <button onclick="openWebsite('https://www.github.com/bogyz123/proxyworks')">Open website</button>
+          <button onclick="previewWebsite('proxychecker')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item">
+        <li id="KR" onclick="openUrl('https://www.github.com/bogyz123/kinors', this)">KinoRS</li>
+        <div class="project-list-item-actions">
+          <button onclick="openWebsite('https://www.github.com/bogyz123/kinors')">Open website</button>
+          <button onclick="previewWebsite('kinors')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item">
+        <li id="IL" onclick="openUrl('https://www.github.com/bogyz123/instalock', this)">Instalock (<span style="color: orangered;">C#</span>)</li>
+        <div class="project-list-item-actions">
+          <button onclick="openWebsite('https://www.github.com/bogyz123/instalock')">Open website</button>
+          <button onclick="previewWebsite('instalock')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item">
+        <li id="MG" onclick="openUrl('https://www.github.com/bogyz123/memgo', this)">MemGO (<span style="color: orangered;">GOLANG</span>)</li>
+        <div class="project-list-item-actions">
+          <button onclick="openWebsite('https://www.github.com/bogyz123/memgo')">Open website</button>
+          <button onclick="previewWebsite('memgo')">Preview website</button>
+        </div>
+      </div>
     </ul>
+    <div id="project-preview-container">
+      <h1 id="project-preview-title"></h1>
+      <p id="project-preview-description"></p>
+      <p>Technologies used to build this project are:</p>
+      <ul id="project-preview-technologies"></ul>
+      <iframe frameborder="0" scrolling="yes"></iframe>
+
+      <div id="project-preview-close" onclick="closePreview()">X</div>
+      <img src="./sad.png" alt="sad emoji" id="project-preview-sademoji" />
+      <code style="text-align: center;">This project has no website to preview.</code>
+    </div>
     <div class="about">
       <div class="about__content">
         <p class="about__name">
@@ -57,93 +116,32 @@
       <ul id="skills__list">
         <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
           HTML & CSS
-          <div class="stars">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-          </div>
         </li>
         <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
           JavaScript
-          <div class="stars">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-          </div>
         </li>
         <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE', 'KR'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE', 'KR'])">
           React.JS
-          <div class="stars">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-          </div>
         </li>
         <li class="skill" onmouseover="popProject('pop', ['IL'])" onmouseleave="popProject('unpop', ['IL'])">
           C#
-          <div class="stars">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-          </div>
         </li>
         <li class="skill" onmouseover="popProject('pop', ['MG'])" onmouseleave="popProject('unpop', ['MG'])">
           Golang
-          <div class="stars">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-          </div>
         </li>
 
         <li class="skill" onmouseover="popProject('pop', ['LY', 'PC'])" onmouseleave="popProject('unpop', ['LY', 'PC'])">
           Node & Express
-          <div class="stars">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-          </div>
         </li>
         <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE'])">
           Firebase
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half-o" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
         </li>
 
         <li class="skill" onmouseover="popProject('pop', ['LY'])" onmouseleave="popProject('unpop', ['LY'])">
           MongoDB
-          <div class="stars">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-          </div>
         </li>
         <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE'])">
           Redux & Redux-Persist
-          <div class="stars">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-          </div>
         </li>
 
         <li class="skill" onmouseover="popProject('pop', ['SNKRS', 'LY'])" onmouseleave="popProject('unpop', ['SNKRS', 'LY'])">EmailJS, ChartJS & QRJs</li>
@@ -161,7 +159,9 @@
       <button class="link-choice" onclick="handleLink('failure')">later</button>
     </div>
     <div class="project-list" id="menu">
-      <li id="SS" onclick="openUrl('https://www.github.com/bogyz123/sharepictures')">Sharepictures</li>
+      <div class="project-list-item">
+        <li id="SS" onclick="openUrl('https://www.github.com/bogyz123/sharepictures')">Sharepictures</li>
+      </div>
       <li id="CX" onclick="openUrl('https://www.github.com/bogyz123/codebox')">Codebox</li>
       <li id="SNKRS" onclick="openUrl('https://www.github.com/bogyz123/SNKRS')">SNKRS</li>
       <li id="LY" onclick="openUrl('https://www.github.com/bogyz123/linkify')">Linkify</li>
