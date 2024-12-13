@@ -41,16 +41,16 @@ const unpop = (project) => {
 };
 const openUrl = async (url, caller) => {
   urlToOpen = url;
-  const item = caller.closest(".project-list-item").querySelector(".project-list-item-actions");
+  const item = caller?.closest(".project-list-item").querySelector(".project-list-item-actions");
   if (item.style.display === "flex") {
     item.style.display = "none";
   } else {
     item.style.display = "flex";
   }
 };
-const openWebsite = (website) => {
-  document.getElementById("link-warning").style.display = "flex";
+const setOpeningWarning = (website) => {
   document.getElementById("link-url").textContent = "this will open " + website;
+  document.getElementById("link-warning").style.display = "flex";
 };
 const handleLink = (status) => {
   if (status === "failure") {
