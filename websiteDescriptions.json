@@ -54,5 +54,12 @@
     "title": "MemGO",
     "technologies": ["Golang"],
     "hasWebsite": false
+  },
+  "animlib": {
+    "url": "https://github.com/bogyz123/animlib",
+    "description": "animlib is a (very early build) React & Tailwind docs project that (will) contain lots of common CSS animations/designs that are used these days.",
+    "title": "AnimLib",
+    "technologies": ["React.JS", "TailwindCSS"],
+    "hasWebsite": true
   }
 }
