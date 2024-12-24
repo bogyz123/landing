@@ -248,7 +248,6 @@ body {
   width: 10vw;
   cursor: pointer;
 }
-
 #skills__list {
   list-style: none;
   -moz-column-gap: 5vw;
@@ -424,6 +423,19 @@ body {
     transform: translateX(0px);
   }
 }
+.project-list-item {
+  animation: drop 1s ease-out forwards;
+  opacity: 0;
+}
+@keyframes drop {
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 .project-list-item-actions {
   display: flex;
   flex-direction: column;
@@ -483,4 +495,5 @@ iframe {
   border: 2px solid purple;
   border-radius: 10px;
 }
+
 /*# sourceMappingURL=index.css.map */

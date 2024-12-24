@@ -2,7 +2,7 @@ const scaleNav = (action) => {
   const nav = document.getElementsByClassName("project-list")[0];
   switch (action) {
     case "scale": {
-      nav.style.scale = "1.5";
+      nav.style.scale = "1.2";
       break;
     }
     case "descale": {
@@ -15,17 +15,23 @@ const popProject = (popType, projects) => {
   switch (popType) {
     case "pop": {
       for (let i = 0; i < projects.length; i++) {
-        document.getElementById(projects[i]).style.scale = "1.6";
-        document.getElementById(projects[i]).style.padding = "0 30px";
-        document.getElementById(projects[i]).style.color = "orange";
+        const element = document.getElementById(projects[i]);
+        if (element) {
+          element.style.scale = "1.1";
+          element.style.padding = "0 30px";
+          element.style.color = "crimson";
+        }
       }
       break;
     }
     case "unpop": {
       for (let i = 0; i < projects.length; i++) {
-        document.getElementById(projects[i]).style.scale = "1";
-        document.getElementById(projects[i]).style.padding = "0";
-        document.getElementById(projects[i]).style.color = "white";
+        const element = document.getElementById(projects[i]);
+        if (element) {
+          element.style.scale = "1";
+          element.style.padding = "0";
+          element.style.color = "white";
+        }
       }
       break;
     }
