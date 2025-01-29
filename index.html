@@ -1,0 +1,276 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bogdan Đaković</title>
+    <link rel="stylesheet" href="sass/index.css" />
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+
+  <body class="darkmode">
+    <div id="burger" onclick="handleMenu()">
+      <i class="fa fa-solid fa-bars fa-lg"></i>
+    </div>
+    <ul class="project-list">
+      <div class="project-list-item">
+        <li id="SS" onclick="openUrl('https://www.github.com/bogyz123/sharepictures', this)">Sharepictures</li>
+        <div class="project-list-item-actions">
+          <button onclick="setOpeningWarning('https://www.github.com/bogyz123/sharepictures')">Open website</button>
+          <button onclick="previewWebsite('sharepictures')" data-project="sharepictures">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item" style="animation-delay: 200ms;">
+        <li id="CX" onclick="openUrl('https://www.github.com/bogyz123/codebox', this)">Codebox</li>
+        <div class="project-list-item-actions">
+          <button onclick="setOpeningWarning('https://www.github.com/bogyz123/codebox')">Open website</button>
+          <button onclick="previewWebsite('codebox')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item" style="animation-delay: 400ms;">
+        <li id="SNKRS" onclick="openUrl('https://www.github.com/bogyz123/SNKRS', this)">SNKRS</li>
+        <div class="project-list-item-actions">
+          <button onclick="setOpeningWarning('https://www.github.com/bogyz123/snkrs')">Open website</button>
+          <button onclick="previewWebsite('snkrs')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item" style="animation-delay: 600ms;">
+        <li id="LY" onclick="openUrl('https://www.github.com/bogyz123/urlshort', this)">Linkify</li>
+        <div class="project-list-item-actions">
+          <button onclick="setOpeningWarning('https://www.github.com/bogyz123/snkrs')">Open website</button>
+          <button onclick="previewWebsite('linkify')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item" style="animation-delay: 800ms;">
+        <li id="PC" onclick="openUrl('https://www.github.com/bogyz123/proxyworks', this)">ProxyChecker API</li>
+        <div class="project-list-item-actions">
+          <button onclick="setOpeningWarning('https://www.github.com/bogyz123/proxyworks')">Open website</button>
+          <button onclick="previewWebsite('proxychecker')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item" style="animation-delay: 1000ms;">
+        <li id="KR" onclick="openUrl('https://www.github.com/bogyz123/kinors', this)">KinoRS</li>
+        <div class="project-list-item-actions">
+          <button onclick="setOpeningWarning('https://www.github.com/bogyz123/kinors')">Open website</button>
+          <button onclick="previewWebsite('kinors')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item" style="animation-delay: 1200ms;">
+        <li id="IL" onclick="openUrl('https://www.github.com/bogyz123/instalock', this)">Instalock (<span style="color: gold;">C#</span>)</li>
+        <div class="project-list-item-actions">
+          <button onclick="setOpeningWarning('https://www.github.com/bogyz123/instalock')">Open website</button>
+          <button onclick="previewWebsite('instalock')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item" style="animation-delay: 1400ms;">
+        <li id="MG" onclick="openUrl('https://www.github.com/bogyz123/memgo', this)">MemGO (<span style="color: gold;">GOLANG</span>)</li>
+        <div class="project-list-item-actions">
+          <button onclick="setOpeningWarning('https://www.github.com/bogyz123/memgo')">Open website</button>
+          <button onclick="previewWebsite('memgo')">Preview website</button>
+        </div>
+      </div>
+      <div class="project-list-item" style="animation-delay: 1600ms;">
+        <li id="AL" onclick="openUrl('https://www.github.com/bogyz123/animlib', this)">Animlib</li>
+        <div class="project-list-item-actions">
+          <button onclick="setOpeningWarning('https://www.github.com/bogyz123/animlib')">Open website</button>
+          <button onclick="previewWebsite('animlib')" data-project="animlib">Preview website</button>
+        </div>
+      </div>
+    </ul>
+    <div id="project-preview-container">
+      <h1 id="project-preview-title"></h1>
+      <p id="project-preview-description"></p>
+      <p>Technologies used to build this project are:</p>
+      <ul id="project-preview-technologies"></ul>
+      <iframe frameborder="0" scrolling="yes"></iframe>
+
+      <div id="project-preview-close" onclick="closePreview()">X</div>
+      <img src="./sad.png" alt="sad emoji" id="project-preview-sademoji" />
+      <code style="text-align: center;">This project has no website to preview.</code>
+    </div>
+    <div class="about">
+      <div class="about__content">
+        <p class="about__name">
+          I'M <br />
+          BOGDAN ĐAKOVIĆ
+        </p>
+        <hr />
+        <p class="about__profession">Web Developer</p>
+        <p>| bogdandjakovic123@gmail.com</p>
+        <p>| Elektrotehnicar racunara</p>
+      </div>
+      <div class="about__me">
+        <p id="about__me__description">
+          I am a self-taught web developer, mainly working in React and constantly learning new skills to stay up-to-date with the latest web technologies!
+          <br />
+          I was born on third December of 2003 - <span class="auto-write">20 years old.</span>
+          <br />
+          I have completed a couple of personal projects showcasing my React & other libraries' skills! You can access those websites <span class="link" onmouseleave="scaleNav('descale')" onmouseover="scaleNav('scale')" style="color: orangered;">here.</span>
+          <br />
+          I am very proficient at both speaking and writing clean English as well as JavaScript!
+          <br />
+          My main goal is to learn how to write more clean & efficient code and become the best possible version of myself as a developer!
+          <br />
+          My long-term goal is to become a full-stack developer & work on big projects!
+        </p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="about__skills">
+      <p class="about__title">SKILLS</p>
+      <code class="center">These are the technologies that I've used throughout my projects! (You can hover over to see what projects are using them)</code>
+      <ul id="skills__list">
+        <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
+          HTML & CSS
+        </li>
+        <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
+          JavaScript
+        </li>
+        <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE', 'KR'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE', 'KR'])">
+          React.JS
+        </li>
+        <li class="skill" onmouseover="popProject('pop', ['IL'])" onmouseleave="popProject('unpop', ['IL'])">
+          C#
+        </li>
+        <li class="skill" onmouseover="popProject('pop', ['MG'])" onmouseleave="popProject('unpop', ['MG'])">
+          Golang
+        </li>
+
+        <li class="skill" onmouseover="popProject('pop', ['LY', 'PC'])" onmouseleave="popProject('unpop', ['LY', 'PC'])">
+          Node & Express
+        </li>
+        <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE'])">
+          Firebase
+        </li>
+
+        <li class="skill" onmouseover="popProject('pop', ['LY'])" onmouseleave="popProject('unpop', ['LY'])">
+          MongoDB
+        </li>
+        <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE'])">
+          Redux & Redux-Persist
+        </li>
+
+        <li class="skill" onmouseover="popProject('pop', ['SNKRS', 'LY'])" onmouseleave="popProject('unpop', ['SNKRS', 'LY'])">EmailJS, ChartJS & QRJs</li>
+      </ul>
+      <div id="gitz">
+        <img src="arrow.png" alt="arrow pointing right">
+        <img src="git.png" id="github" alt="github logo" onclick="previewGit()" />
+      </div>
+      <p class="center" id="shaker">You can check more on my Github!</p>
+    </div>
+
+    <div id="link-warning">
+      <p>Just making sure you're okay with this...</p>
+      <code id="link-url" class="center">this will open <span></span></code>
+      <button class="link-choice" onclick="handleLink('success')">yes!</button>
+      <button class="link-choice" onclick="handleLink('failure')">later</button>
+    </div>
+
+    <div class="project-list" id="menu">
+      <div class="project-list-item">
+        <li id="SS" onclick="setOpeningWarning('https://www.github.com/bogyz123/sharepictures', this)">Sharepictures</li>
+      </div>
+      <div class="project-list-item">
+        <li id="CX" onclick="setOpeningWarning('https://www.github.com/bogyz123/codebox', this)">Codebox</li>
+      </div>
+      <div class="project-list-item">
+        <li id="SNKRS" onclick="setOpeningWarning('https://www.github.com/bogyz123/SNKRS', this)">SNKRS</li>
+      </div>
+      <div class="project-list-item">
+        <li id="LY" onclick="setOpeningWarning('https://www.github.com/bogyz123/linkify', this)">Linkify</li>
+      </div>
+      <div class="project-list-item">
+        <li id="PC" onclick="setOpeningWarning('https://www.github.com/bogyz123/proxyworks', this)">ProxyChecker API</li>
+      </div>
+      <div class="project-list-item">
+        <li id="IL" onclick="setOpeningWarning('https://www.github.com/bogyz123/instalock', this)">Instalock</li>
+      </div>
+      <div class="project-list-item">
+        <li id="KR" onclick="setOpeningWarning('https://www.github.com/bogyz123/kinors', this)">KinoRS</li>
+      </div>
+      <div class="project-list-item">
+        <li id="MG" onclick="setOpeningWarning('https://www.github.com/bogyz123/memgo', this)">MemGO</li>
+      </div>
+    </div>
+    <div id="toggler">
+      <button onclick="toggleDarkMode()">
+        <img src="./sun.png" alt="enable light mode" style="transform: scaleX(-1);" id="sun" />
+        <img src="./moon.png" alt="enable dark mode" id="moon" />
+      </button>
+    </div>
+    <div id="git-previewer">
+      <span id="preview-title">Check out my GitHub for more projects!</span>
+      <div id="previewer-projects">
+        <div class="previewer-project" onclick="previewerExpandContent(event)">
+          <div class="previewer-project-title">SharePictures</div>
+          <div class="previewer-project-expander">
+              <span>SharePictures is an image-sharing website (like Imgur) created in React.JS and Firebase. It has simple functionality of uploading, vieweing, sharing and downloading images.</span>
+              <button onclick="window.open('https://github.com/bogyz123/sharepictures', '_blank')">check it on github!</button>
+          </div>
+        </div>
+        <div class="previewer-project" onclick="previewerExpandContent(event)">
+          <div class="previewer-project-title">Codebox</div>
+          <div class="previewer-project-expander">
+              <span>Codebox is a pasting website similar to Pastebin with the functionality of removing, editing and locking the paste. It also has a login & registration system!</span>
+              <button onclick="window.open('https://github.com/bogyz123/codebox', '_blank')">check it on github!</button>
+          </div>
+        </div>
+        <div class="previewer-project" onclick="previewerExpandContent(event)">
+          <div class="previewer-project-title">SNKRS</div>
+          <div class="previewer-project-expander">
+              <span>SNKRS is a dummy e-commerce website in it's early very early build, it includes a shopping cart, a functional contact form, add-to-favorites function and more.</span>
+              <button onclick="window.open('https://github.com/bogyz123/snkrs', '_blank')">check it on github!</button>
+          </div>
+        </div>
+        <div class="previewer-project" onclick="previewerExpandContent(event)">
+          <div class="previewer-project-title">Linkify</div>
+          <div class="previewer-project-expander">
+              <span>Linkify is a simple URL-shortening website. It uses Node.JS server for it's backend operations (creation and retrieval of URL's) and stores them in a MongoDB database. Currently, the website is not operational since Github pages cannot host servers, just static files.</span>
+              <button onclick="window.open('https://github.com/bogyz123/linkify', '_blank')">check it on github!</button>
+          </div>
+        </div>
+        <div class="previewer-project" onclick="previewerExpandContent(event)">
+          <div class="previewer-project-title">ProxyChecker (API+Library)</div>
+          <div class="previewer-project-expander">
+              <span>ProxyChecker is a repository containing a library and a Node.JS API for checking status of proxies. It supports all proxies from Http/S to Socks5!</span>
+              <button onclick="window.open('https://github.com/bogyz123/ProxyWorks', '_blank')">check it on github!</button>
+          </div>
+        </div>
+        <div class="previewer-project" onclick="previewerExpandContent(event)">
+          <div class="previewer-project-title">KinoRS</div>
+          <div class="previewer-project-expander">
+              <span>KinoRS is a website that displays realtime Greek Keno game draws. It also includes a statistics-page that shows the statistics of user-chosen numbers including their last draw, frequency of draws, etc.</span>
+              <button onclick="window.open('https://github.com/bogyz123/kinors', '_blank')">check it on github!</button>
+          </div>
+        </div>
+        <div class="previewer-project" onclick="previewerExpandContent(event)">
+          <div class="previewer-project-title">Instalock</div>
+          <div class="previewer-project-expander">
+              <span>Instalock is my favorite project written in C# purely for the League of Legends game. It utilizes backend undocumented Riot Games API's to automate Riot-Client actions for you.</span>
+              <button onclick="window.open('https://github.com/bogyz123/instalock', '_blank')">check it on github!</button>
+          </div>
+        </div>
+        <div class="previewer-project" onclick="previewerExpandContent(event)">
+          <div class="previewer-project-title">MemGO</div>
+          <div class="previewer-project-expander">
+              <span>MemGO is my attempt in Golang, it's a very early built application that manipulates process' memory. Currently it supports attaching to a process, reading it's memory, writing memory, injecting a custom DLL library into the process memory. In future, it will be a library with more options.</span>
+              <button onclick="window.open('https://github.com/bogyz123/memgo', '_blank')">check it on github!</button>
+          </div>
+        </div>
+        <div class="previewer-project" onclick="previewerExpandContent(event)">
+          <div class="previewer-project-title">AnimLib</div>
+          <div class="previewer-project-expander">
+              <span>Animlib is a (very early build) React & Tailwind docs project that (will) contain lots of common CSS animations/designs that are used these days.</span>
+              <button onclick="window.open('https://github.com/bogyz123/animlib', '_blank')">check it on github!</button>
+          </div>
+        </div>
+        <span>Note that these are some of the project I've worked on. My first real project was a Proxy Checker created in VB.NET 5 years ago, I didn't have a habit of saving projects because they were mainly used for learning so many of them are gone.</span>
+        <span style="margin-top: 5px;">After switching from C# to Web Development, I opted for React.js mainly because of it's popularity and usage. It's very convenient to combine with Tailwind and for backend Node.js, well, any technology goes well with React.</span>
+        <span style="margin-top: 5px;">As much as I like CSS and frontend, I will forever like backend the same, my first real project I've mentioned was a backend project, I also created it in Node.JS, besides that I have a Golang memory library :-).</span>
+        <span style="margin-top: 5px;">I find backend very interesting whether it's for the Web like API's, JWT's, OAuth2, Data Encryption, Buffering streams in Node or if it's Windows API's or software itself.</span>
+      </div>
+      <div id="previewer-exit" onclick="closePreviewer()">X</div>
+    </div>
+  </body>
+</html>

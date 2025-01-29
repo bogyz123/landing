@@ -1,0 +1,65 @@
+{
+  "sharepictures": {
+    "url": "https://bogyz123.github.io/sharepictures",
+    "description": "SharePictures is an image-sharing website (like Imgur) created in React.JS and Firebase. It has simple functionality of uploading, vieweing, sharing and downloading images.",
+    "title": "Share Pictures",
+    "technologies": ["React.JS", "Firebase", "Firebase-Storage"],
+    "hasWebsite": true
+  },
+  "codebox": {
+    "url": "https://bogyz123.github.io/codebox",
+    "description": "Codebox is a pasting website similar to Pastebin with the functionality of removing, editing and locking the paste. It also has a login & registration system!",
+    "title": "Codebox",
+    "technologies": ["React.JS", "Firebase", "Redux.JS"],
+    "hasWebsite": true
+  },
+  "snkrs": {
+    "url": "https://bogyz123.github.io/SNKRS/",
+    "description": "SNKRS is a dummy sneaker-shopping website in it's early build (very), it includes a shopping cart, a functional contact form, add-to-favorites function and more.",
+    "title": "SNKRS",
+    "technologies": ["React.JS", "Firebase", "Redux.JS", "Email.JS (contact form)"],
+    "hasWebsite": true
+  },
+  "linkify": {
+    "url": "https://bogyz123.github.io/linkify",
+    "description": "Linkify is a simple URL-shortening website. It uses Node.JS server for it's backend operations (creation and retrieval of URL's) and stores them in a MongoDB database. Currently, the website is not operational since Github pages cannot host servers, just static files.",
+    "title": "Linkify",
+    "technologies": ["React.JS", "MongoDB", "Node.JS"],
+    "hasWebsite": false
+  },
+  "proxychecker": {
+    "url": "https://github.com/bogyz123/proxyworks",
+    "description": "ProxyChecker API is a github repository that includes an API, UI and my own library written to test the status of a proxy. Currently, it doesn't have a website because Github pages serve static files only and not a server.",
+    "title": "ProxyChecker",
+    "technologies": ["React.JS", "Node.JS", "Express.JS"],
+    "hasWebsite": false
+  },
+  "kinors": {
+    "url": "https://bogyz123.github.io/kinors",
+    "description": "KinoRS is a website that displays realtime Greek Keno game draws. It also includes a statistics-page that shows the statistics of user-chosen numbers including their last draw, frequency of draws, etc.",
+    "title": "KinoRS",
+    "technologies": ["React.JS", "MongoDB", "Node.JS"],
+    "hasWebsite": true
+  },
+  "instalock": {
+    "url": "https://github.com/bogyz123/instalock",
+    "description": "Instalock is my favorite project written in C# purely for the League of Legends game. It utilizes backend undocumented Riot Games API's to automate Riot-Client actions for you.",
+    "title": "KinoRS",
+    "technologies": ["C#", "Riot-Client-API's"],
+    "hasWebsite": false
+  },
+  "memgo": {
+    "url": "https://github.com/bogyz123/memgo",
+    "description": "MemGO is my attempt in Golang, it's a very early built application that manipulates process' memory. Currently it supports attaching to a process, reading it's memory, writing memory, injecting a custom DLL library into the process memory. In future, it will be a library with more options.",
+    "title": "MemGO",
+    "technologies": ["Golang"],
+    "hasWebsite": false
+  },
+  "animlib": {
+    "url": "https://bogyz123.github.io/animlib",
+    "description": "animlib is a (very early build) React & Tailwind docs project that (will) contain lots of common CSS animations/designs that are used these days.",
+    "title": "AnimLib",
+    "technologies": ["React.JS", "TailwindCSS"],
+    "hasWebsite": true
+  }
+}
