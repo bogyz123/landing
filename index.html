@@ -57,14 +57,14 @@
         </div>
       </div>
       <div class="project-list-item" style="animation-delay: 1200ms;">
-        <li id="IL" onclick="openUrl('https://www.github.com/bogyz123/instalock', this)">Instalock (<span style="color: gold;">C#</span>)</li>
+        <li id="IL" onclick="openUrl('https://www.github.com/bogyz123/instalock', this)">Instalock (<span style="color: rgb(235, 22, 86);">C#</span>)</li>
         <div class="project-list-item-actions">
           <button onclick="setOpeningWarning('https://www.github.com/bogyz123/instalock')">Open website</button>
           <button onclick="previewWebsite('instalock')">Preview website</button>
         </div>
       </div>
       <div class="project-list-item" style="animation-delay: 1400ms;">
-        <li id="MG" onclick="openUrl('https://www.github.com/bogyz123/memgo', this)">MemGO (<span style="color: gold;">GOLANG</span>)</li>
+        <li id="MG" onclick="openUrl('https://www.github.com/bogyz123/memgo', this)">MemGO (<span style="color: rgb(235, 22, 86);">GOLANG</span>)</li>
         <div class="project-list-item-actions">
           <button onclick="setOpeningWarning('https://www.github.com/bogyz123/memgo')">Open website</button>
           <button onclick="previewWebsite('memgo')">Preview website</button>
@@ -92,23 +92,24 @@
     <div class="about">
       <div class="about__content">
         <p class="about__name">
-          I'M <br />
-          BOGDAN ĐAKOVIĆ
+          <span class="animate-appear" style="animation-delay: 750ms;">I'M</span> 
+          <br />
+         <span class="animate-appear" style="animation-delay: 950ms;" data-value="BOGDAN ĐAKOVIĆ"> BOGDAN ĐAKOVIĆ</span>
         </p>
         <hr />
         <p class="about__profession">Web Developer</p>
         <p>| bogdandjakovic123@gmail.com</p>
-        <p>| Elektrotehnicar racunara</p>
+        <small>| Elektrotehnicar racunara - Technical School</small>
       </div>
       <div class="about__me">
         <p id="about__me__description">
           I am a self-taught web developer, mainly working in React and constantly learning new skills to stay up-to-date with the latest web technologies!
           <br />
-          I was born on third December of 2003 - <span class="auto-write">20 years old.</span>
+          I was born on third December of 2003 - <span class="auto-write">21 years old.</span>
           <br />
-          I have completed a couple of personal projects showcasing my React & other libraries' skills! You can access those websites <span class="link" onmouseleave="scaleNav('descale')" onmouseover="scaleNav('scale')" style="color: orangered;">here.</span>
+          I have completed a couple of personal projects showcasing my React & other libraries' skills! You can access those websites <span class="link" onmouseleave="scaleNav('descale')" onmouseover="scaleNav('scale')" style="color: hotpink;">here.</span>
           <br />
-          I am very proficient at both speaking and writing clean English as well as JavaScript!
+          I am very proficient at both speaking and writing clean English (C1) as well as JavaScript!
           <br />
           My main goal is to learn how to write more clean & efficient code and become the best possible version of myself as a developer!
           <br />
@@ -121,37 +122,37 @@
       <p class="about__title">SKILLS</p>
       <code class="center">These are the technologies that I've used throughout my projects! (You can hover over to see what projects are using them)</code>
       <ul id="skills__list">
-        <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
+        <li class="skill" data-value="HTML & CSS" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
           HTML & CSS
         </li>
-        <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
+        <li class="skill" data-value="JavaScript" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
           JavaScript
         </li>
-        <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE', 'KR'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE', 'KR'])">
+        <li class="skill" data-value="React.JS" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE', 'KR'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE', 'KR'])">
           React.JS
         </li>
-        <li class="skill" onmouseover="popProject('pop', ['IL'])" onmouseleave="popProject('unpop', ['IL'])">
+        <li class="skill" data-value="C#" onmouseover="popProject('pop', ['IL'])" onmouseleave="popProject('unpop', ['IL'])">
           C#
         </li>
-        <li class="skill" onmouseover="popProject('pop', ['MG'])" onmouseleave="popProject('unpop', ['MG'])">
+        <li class="skill" data-value="Golang" onmouseover="popProject('pop', ['MG'])" onmouseleave="popProject('unpop', ['MG'])">
           Golang
         </li>
 
-        <li class="skill" onmouseover="popProject('pop', ['LY', 'PC'])" onmouseleave="popProject('unpop', ['LY', 'PC'])">
+        <li class="skill" data-value="Node & Express" onmouseover="popProject('pop', ['LY', 'PC'])" onmouseleave="popProject('unpop', ['LY', 'PC'])">
           Node & Express
         </li>
-        <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE'])">
+        <li class="skill" data-value="Firebase" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE'])">
           Firebase
         </li>
 
-        <li class="skill" onmouseover="popProject('pop', ['LY'])" onmouseleave="popProject('unpop', ['LY'])">
+        <li class="skill" data-value="MongoDB" onmouseover="popProject('pop', ['LY'])" onmouseleave="popProject('unpop', ['LY'])">
           MongoDB
         </li>
-        <li class="skill" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE'])">
+        <li class="skill" data-value="Redux & Redux-Persist" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE'])">
           Redux & Redux-Persist
         </li>
 
-        <li class="skill" onmouseover="popProject('pop', ['SNKRS', 'LY'])" onmouseleave="popProject('unpop', ['SNKRS', 'LY'])">EmailJS, ChartJS & QRJs</li>
+        <li class="skill" data-value="EmailJS, ChartJS & QRJs" onmouseover="popProject('pop', ['SNKRS', 'LY'])" onmouseleave="popProject('unpop', ['SNKRS', 'LY'])">EmailJS, ChartJS & QRJs</li>
       </ul>
       <div id="gitz">
         <img src="arrow.png" alt="arrow pointing right">

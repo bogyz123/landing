@@ -11,6 +11,7 @@ const scaleNav = (action) => {
     }
   }
 };
+
 const popProject = (popType, projects) => {
   switch (popType) {
     case "pop": {
@@ -39,14 +40,16 @@ const popProject = (popType, projects) => {
     }
   }
 };
+
 var urlToOpen = null;
 var openedNode;
+
 const unpop = (project) => {
   document.getElementById(project).style.scale = "1";
   document.getElementById(project).style.margin = "0";
 };
+
 const openUrl = async (url, caller) => {
-  
   urlToOpen = url;
   const item = caller?.closest(".project-list-item").querySelector(".project-list-item-actions");
   const allActions = document.querySelectorAll(".project-list-item-actions");
@@ -54,30 +57,74 @@ const openUrl = async (url, caller) => {
     if (el !== item) {
       el.style.display = "none";
     }
-  })
+  });
   if (item.style.display === "flex") {
     item.style.display = "none";
   } else {
     item.style.display = "flex";
   }
 };
+const shuffleText = (element) => {
+  let iteration = 0;
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let interval = null;
+  interval = setInterval(() => {
+    element.innerText = element.innerText
+      .split("")
+      .map((letter, index) => {
+        if(index < iteration) {
+          return element.dataset.value[index];
+        }
+      
+        return letters[Math.floor(Math.random() * 26)]
+      })
+      .join("");
+    
+    if(iteration >= element.dataset.value.length){ 
+      clearInterval(interval);
+    }
+    
+    iteration += 1 / 3;
+  }, 50);
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const skills = document.querySelectorAll("[data-value]");
+  skills.forEach((skill) => {
+    shuffleText(skill);
+  })
+});
+
 const setOpeningWarning = (website) => {
-  document.getElementById("link-url").textContent = "this will open " + website;
-  document.getElementById("link-warning").style.display = "flex";
+  const warningElement = document.getElementById("link-warning");
+  const linkUrlElement = document.getElementById("link-url");
+  linkUrlElement.textContent = "this will open " + website;
+  warningElement.style.display = "flex";
+  warningElement.classList.add("show");
 };
+
 const handleLink = (status) => {
   if (status === "failure") {
-    document.getElementById("link-warning").style.display = "none";
-    return;
+    const warning = document.getElementById("link-warning");
+    warning.classList.add("hide");
+    warning.addEventListener(
+      "animationend",
+      () => {
+        warning.style.display = "none";
+        warning.classList.remove("hide");
+      },
+      { once: true }
+    );
   } else {
     document.getElementById("link-warning").style.display = "none";
     window.open(urlToOpen, "_blank");
   }
 };
+
 const previewGit = () => {
   const gitPreviewCard = document.getElementById("git-previewer");
   gitPreviewCard.style.display = "flex";
-}
+};
+
 const handleMenu = () => {
   const menu = document.getElementById("menu");
   if (menu.style.display === "none" || menu.style.display === "") {
@@ -86,6 +133,7 @@ const handleMenu = () => {
     menu.style.display = "none";
   }
 };
+
 const toggleDarkMode = () => {
   let isDarkMode = document.body.classList.contains("darkmode");
   if (isDarkMode) {
@@ -100,15 +148,16 @@ const toggleDarkMode = () => {
     document.getElementById("moon").style.opacity = "0";
   }
 };
+
 const previewerExpandContent = (event) => {
-const content = event.currentTarget.getElementsByClassName("previewer-project-expander")[0];
-if (content.style.display === "flex") {
-  content.style.display = "none";
-}
-else {
-  content.style.display = "flex";
-}
-}
+  const content = event.currentTarget.getElementsByClassName("previewer-project-expander")[0];
+  if (content.style.display === "flex") {
+    content.style.display = "none";
+  } else {
+    content.style.display = "flex";
+  }
+};
+
 const previewWebsite = async (website) => {
   let data = null;
   if (website) {
@@ -145,7 +194,8 @@ const previewWebsite = async (website) => {
   });
   previewContainer.style.display = "flex";
 };
-const closePreview = () => { // This is the previewer of an individual project screen, when you click a project from navbar.
+
+const closePreview = () => {
   let container = document.getElementById("project-preview-container");
   container.style.display = "none";
   container.querySelector("h1").textContent = null;
@@ -153,7 +203,8 @@ const closePreview = () => { // This is the previewer of an individual project s
   container.querySelector("ul").innerHTML = null;
   container.querySelector("code").innerHTML = null;
 };
-const closePreviewer = () => { // This closes the all projects screen
+
+const closePreviewer = () => {
   const previewContainer = document.getElementById("git-previewer");
   previewContainer.style.display = "none";
-}
+};
