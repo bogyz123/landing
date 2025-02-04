@@ -6,13 +6,66 @@
     <title>Bogdan Đaković</title>
     <link rel="stylesheet" href="sass/index.css" />
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
 
   <body class="darkmode">
+    <div id="tsparticles"></div>
+
+
     <div id="burger" onclick="handleMenu()">
       <i class="fa fa-solid fa-bars fa-lg"></i>
     </div>
+    <script type="text/javascript">
+      const options = {
+        background: {
+          color: "inherit", // the canvas background color
+        },
+        interactivity: {
+          events: {
+            onClick: {
+              // this handles the mouse click event
+              enable: true,
+              mode: "push", // this adds particles
+            },
+            onHover: {
+              enable: true,
+              mode: "repulse", 
+            },
+          },
+          modes: {
+            push: {
+              quantity: 6, 
+            },
+            repulse: {
+              distance: 100,
+            },
+          },
+        },
+        particles: {
+          links: {
+            enable: true,
+            opacity: 0.3,
+            distance: 200,
+          },
+          move: {
+            enable: true,
+            speed: { min: 1, max: 3 }, 
+          },
+          opacity: {
+            value: { min: 0.3, max: 0.7 }, 
+          },
+          size: {
+            value: { min: 1, max: 3 }, 
+          },
+        },
+      };
+
+      tsParticles.load("tsparticles", options);
+    </script>
+
+
     <ul class="project-list">
       <div class="project-list-item">
         <li id="SS" onclick="openUrl('https://www.github.com/bogyz123/sharepictures', this)">Sharepictures</li>

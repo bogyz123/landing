@@ -12,6 +12,8 @@ const scaleNav = (action) => {
   }
 };
 
+
+
 const popProject = (popType, projects) => {
   switch (popType) {
     case "pop": {
