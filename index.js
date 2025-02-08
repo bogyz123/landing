@@ -123,8 +123,15 @@ const handleLink = (status) => {
 };
 
 const previewGit = () => {
-  const gitPreviewCard = document.getElementById("git-previewer");
-  gitPreviewCard.style.display = "flex";
+    const previewContainer = document.getElementById("git-previewer");
+    previewContainer.style.animation = "previewAppear 2s forwards"; 
+    previewContainer.style.display = 'flex'; 
+};
+
+const closePreviewer = () => {
+  const previewContainer = document.getElementById("git-previewer");
+  previewContainer.style.animation = "previewDisappear 2s forwards"; 
+
 };
 
 const handleMenu = () => {
@@ -204,9 +211,4 @@ const closePreview = () => {
   container.querySelector("#project-preview-description").textContent = null;
   container.querySelector("ul").innerHTML = null;
   container.querySelector("code").innerHTML = null;
-};
-
-const closePreviewer = () => {
-  const previewContainer = document.getElementById("git-previewer");
-  previewContainer.style.display = "none";
 };

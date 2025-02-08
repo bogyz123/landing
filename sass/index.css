@@ -144,10 +144,10 @@ body {
 }
 @keyframes animate-glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #a500e6;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a500e6, 0 0 40px #a500e6, 0 0 50px #a500e6, 0 0 60px #a500e6, 0 0 70px #a500e6;
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4d6b, 0 0 40px #ff4d6b, 0 0 50px #ff4d6b, 0 0 60px #ff4d6b, 0 0 70px #ff4d6b, 0 0 80px #ff4d6b;
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4d6b, 0 0 40px #ec1b3e, 0 0 50px #f31b3f, 0 0 60px #f5183d, 0 0 70px #f71b40, 0 0 80px #e9173a;
   }
 }
 @keyframes animate-appear {
@@ -535,22 +535,24 @@ body {
 }
 
 #git-previewer {
-backdrop-filter: blur(5px);
-width: 95%;
-height: 95%;
-position: fixed;
-animation: previewAppear 2s forwards;
-display: none;
-font-size: clamp(12px, 1.5vw, 22px);
-font-family: 'Courier New', Courier, monospace;
-flex-direction: column;
-padding: 10px;
-margin-left:auto;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-color: white;
-z-index: 1000;
+  backdrop-filter: blur(5px);
+  width: 95%;
+  height: 95%;
+  position: fixed;
+  animation: previewAppear 2s forwards;
+  font-size: clamp(12px, 1.5vw, 22px);
+  font-family: 'Courier New', Courier, monospace;
+  flex-direction: column;
+  padding: 10px;
+  margin-left: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 1000;
+  opacity: 1; /* Added opacity to control fade-out */
+  display: none;
+  font-family: Montserrat, Arial, sans-serif;
 }
 #gitz {
   display: flex;
@@ -625,12 +627,20 @@ background-color: rgb(102, 11, 177);
 
 @keyframes previewAppear {
   from {
-    backdrop-filter: blur(0);
     scale: 0;
   }
   to {
-    backdrop-filter: blur(5px);
     scale: 1;
+  }
+}
+@keyframes previewDisappear {
+  from {
+    scale: 1;
+    opacity: 1;
+  }
+  to {
+    scale: 0;
+    opacity: 0;
   }
 }
 li {
