@@ -13,58 +13,16 @@
   <body class="darkmode">
     <div id="tsparticles"></div>
 
-
-    <div id="burger" onclick="handleMenu()">
-      <i class="fa fa-solid fa-bars fa-lg"></i>
-    </div>
-    <script type="text/javascript">
-      const options = {
-        background: {
-          color: "inherit",
-        },
-        interactivity: {
-          events: {
-            onClick: {
-             
-              enable: true,
-              mode: "push", 
-            },
-            onHover: {
-              enable: true,
-              mode: "repulse", 
-            },
-          },
-          modes: {
-            push: {
-              quantity: 6, 
-            },
-            repulse: {
-              distance: 100,
-            },
-          },
-        },
-        particles: {
-          links: {
-            enable: true,
-            opacity: 0.3,
-            distance: 200,
-          },
-          move: {
-            enable: true,
-            speed: { min: 1, max: 3 }, 
-          },
-          opacity: {
-            value: { min: 0.3, max: 0.7 }, 
-          },
-          size: {
-            value: { min: 1, max: 3 }, 
-          },
-        },
-      };
-
-      tsParticles.load("tsparticles", options);
-    </script>
-
+    <label class="hamburger" onclick="handleMenu()">
+      <input type="checkbox" />
+      <svg viewBox="0 0 32 32">
+        <path
+          d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+          class="line line-top-bottom"
+        ></path>
+        <path d="M7 16 27 16" class="line"></path>
+      </svg>
+    </label>
 
     <ul class="project-list">
       <div class="project-list-item">
@@ -221,31 +179,6 @@
       <button class="link-choice" onclick="handleLink('failure')">later</button>
     </div>
 
-    <div class="project-list" id="menu">
-      <div class="project-list-item">
-        <li id="SS" onclick="setOpeningWarning('https://www.github.com/bogyz123/sharepictures', this)">Sharepictures</li>
-      </div>
-      <div class="project-list-item">
-        <li id="CX" onclick="setOpeningWarning('https://www.github.com/bogyz123/codebox', this)">Codebox</li>
-      </div>
-      <div class="project-list-item">
-        <li id="SNKRS" onclick="setOpeningWarning('https://www.github.com/bogyz123/SNKRS', this)">SNKRS</li>
-      </div>
-      <div class="project-list-item">
-        <li id="LY" onclick="setOpeningWarning('https://www.github.com/bogyz123/linkify', this)">Linkify</li>
-      </div>
-      <div class="project-list-item">
-        <li id="PC" onclick="setOpeningWarning('https://www.github.com/bogyz123/proxyworks', this)">ProxyChecker API</li>
-      </div>
-      <div class="project-list-item">
-        <li id="IL" onclick="setOpeningWarning('https://www.github.com/bogyz123/instalock', this)">Instalock</li>
-      </div>
-      <div class="project-list-item">
-        <li id="KR" onclick="setOpeningWarning('https://www.github.com/bogyz123/kinors', this)">KinoRS</li>
-      </div>
-      <div class="project-list-item">
-        <li id="MG" onclick="setOpeningWarning('https://www.github.com/bogyz123/memgo', this)">MemGO</li>
-      </div>
     </div>
     <div id="toggler">
       <button onclick="toggleDarkMode()">
