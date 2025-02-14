@@ -53,7 +53,7 @@ const unpop = (project) => {
   }
 };
 
-const openUrl = async (url, caller) => {
+const openUrl =  (url, caller) => {
   urlToOpen = url;
   const item = caller?.closest(".project-list-item").querySelector(".project-list-item-actions");
   const allActions = document.querySelectorAll(".project-list-item-actions");
@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const setOpeningWarning = (website) => {
+  urlToOpen = website;
   const warningElement = document.getElementById("link-warning");
   const linkUrlElement = document.getElementById("link-url");
   if (warningElement && linkUrlElement) {
@@ -130,6 +131,12 @@ const handleLink = (status) => {
     window.open(urlToOpen, "_blank");
   }
 };
+
+const handleMenu = () => {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle('visible'); // Toggle visibility class
+}
+
 
 const previewGit = () => {
   const previewContainer = document.getElementById("git-previewer");

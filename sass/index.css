@@ -5,6 +5,7 @@
   --bg-col: rgb(89, 4, 123);
   --card-gradient: radial-gradient(circle, rgb(52, 19, 93) 10%, rgb(53, 7, 57) 100%);
   --card-border: 1px solid hotpink;
+  --shineTimer: 3s;
 }
 
 .darkmode {
@@ -51,6 +52,31 @@ body {
   font-size: clamp(12px, 0.8vw, 24px);
 }
 
+#disclaimer {
+  color: #fff;
+  background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+  background-position: 0;
+ background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveBg var(--shineTimer) infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  text-decoration: none;
+  font-family: Montserrat, sans-serif;
+}
+@keyframes moveBg {
+  0% {
+    background-position: -100px;
+  }
+  50% {
+    background-position: 500px;
+  }
+  100% {
+    background-position: 1000px;
+  }
+}
+
+
 .project-list-item li:hover {
   color: rgb(238, 43, 124);
 }
@@ -62,7 +88,9 @@ body {
   padding: 15px;
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
+  display: none;
+
 }
 
 .project-list-item li::before {
@@ -158,7 +186,7 @@ body {
   }
 
   .hamburger {
-    display: block;
+    display: flex;
   }
 
   .project-list:first-of-type {
@@ -166,6 +194,9 @@ body {
   }
   .project-list {
     display: none;
+  }
+  :root {
+    --shineTimer: 5s;
   }
 }
 
@@ -306,7 +337,8 @@ body {
   bottom: 10px;
   gap: 5px;
   border: var(--card-border);
-  transform: translateX(-100%); 
+  transform: translateX(-100%);
+  z-index: 100;
 }
 
 @keyframes dashIn {
@@ -331,7 +363,50 @@ body {
   #link-warning.hide {
     animation: dashOut 0.5s ease-out forwards;
   }
+  .hidden {
+    display: none;
+  }
+
+  #menu {
+    display: flex;
+    opacity: 1;
+    transform: translateY(-100%); 
+    transition: opacity 0.5s, transform 0.5s; 
+    background: rgb(25,25,25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    height: 100%;
+    color: white;
+    flex-direction: column;
+    padding: 5rem;
+    gap: 5px;
+    box-sizing: border-box;
+    overflow: hidden; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
   
+  #menu.visible {
+
+    transform: translateY(0); 
+  }
+  #menu button {
+    all:unset;
+    background-color: rgb(30,30,30);
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  #menu div:hover {
+    background-color: rgb(49, 49, 49);
+  }
   .link-choice:nth-of-type(1) {
     display: inline-block;
     padding: 10px 20px;
@@ -411,8 +486,7 @@ body {
     }
   
     #link-warning {
-      width: 93%;
-      margin-inline: auto;
+      width: 80%;
     }
   }
   

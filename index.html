@@ -13,16 +13,28 @@
   <body class="darkmode">
     <div id="tsparticles"></div>
 
-    <label class="hamburger" onclick="handleMenu()">
-      <input type="checkbox" />
-      <svg viewBox="0 0 32 32">
-        <path
-          d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
-          class="line line-top-bottom"
-        ></path>
-        <path d="M7 16 27 16" class="line"></path>
+    <label class="hamburger">
+      <input type="checkbox" onclick="event.stopPropagation();"/>
+      <svg viewBox="0 0 32 32" onclick="handleMenu()">
+          <path
+            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+            class="line line-top-bottom"
+          ></path>
+          <path d="M7 16 27 16" class="line"></path>
       </svg>
-    </label>
+  </label>
+  
+  <div id="menu">
+    <button onclick="setOpeningWarning('https://www.github.com/bogyz123/sharepictures')">SharePictures</button>
+    <button onclick="setOpeningWarning('https://www.github.com/bogyz123/animlib')">AnimLib</button>
+    <button onclick="setOpeningWarning('https://www.github.com/bogyz123/snkrs')">SNKRS</button>
+    <button onclick="setOpeningWarning('https://www.github.com/bogyz123/urlshort')">Linkify</button>
+    <button onclick="setOpeningWarning('https://www.github.com/bogyz123/proxyworks')">ProxyCheckerAPI</button>
+    <button onclick="setOpeningWarning('https://www.github.com/bogyz123/kinors')">KinoRS</button>
+    <button onclick="setOpeningWarning('https://www.github.com/bogyz123/instalock')">Instalock (C#)</button>
+    <button onclick="setOpeningWarning('https://www.github.com/bogyz123/memgo')">MemGO</button>
+    <button onclick="setOpeningWarning('https://www.github.com/bogyz123/codebox')">Codebox</button>
+  </div>
 
     <ul class="project-list">
       <div class="project-list-item">
@@ -131,7 +143,7 @@
     <div class="connector"></div>
     <div class="about__skills">
       <p class="about__title">SKILLS</p>
-      <code class="center">These are the technologies that I've used throughout my projects! (You can hover over to see what projects are using them)</code>
+      <div class="center" id="disclaimer">These are the technologies that I've used throughout my projects! (You can hover over to see what projects are using them)</div>
       <ul id="skills__list">
         <li class="skill" data-value="HTML & CSS" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC'])">
           HTML & CSS
@@ -262,6 +274,7 @@
         <span>* AWS Lambda</span>
         <span>* AWS S3 & Firebase/Storage</span>
         <span>* Express Server & important web principles (HTTP/S, SSL, TLS, Nginx, WebSockets(keepalive), TCP Layer, and more)</span>
+        <span>* Framer Motion</span>
         </div>
       </div>
       <div id="previewer-exit" onclick="closePreviewer()">X</div>
