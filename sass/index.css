@@ -12,12 +12,14 @@
   --bg-col: linear-gradient(to bottom, hsla(267, 60%, 8%, 1), hsla(240, 40%, 6%, 1));
   --card-gradient: radial-gradient(circle, hsla(267, 96%, 11%, 1) 10%, hsla(297, 60%, 7%, 1) 100%);
   --card-border: 2px solid purple;
+  --boxCol: rgb(58, 0, 124);
 }
 
 .lightmode {
   --bg-col: rgb(89, 4, 123);
   --card-gradient: radial-gradient(circle, rgb(52, 19, 93) 10%, rgb(53, 7, 57) 100%);
   --card-border: 2px solid hotpink;
+  --boxCol: rgb(151, 0, 113);
 }
 
 body {
@@ -56,7 +58,7 @@ body {
   color: #fff;
   background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
   background-position: 0;
- background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: moveBg var(--shineTimer) infinite linear;
   animation-fill-mode: forwards;
@@ -76,11 +78,6 @@ body {
   }
 }
 
-
-.project-list-item li:hover {
-  color: rgb(238, 43, 124);
-}
-
 .hamburger {
   color: white;
   cursor: pointer;
@@ -93,15 +90,6 @@ body {
 
 }
 
-.project-list-item li::before {
-  content: "";
-  background: hotpink;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-}
 
 .project-list-item li:hover::before {
   width: 100%;
@@ -518,8 +506,15 @@ body {
     animation: drop 1s ease-out forwards;
     opacity: 0;
     font-size: 12px;
+    background: inherit;
+    text-align: center;
+    border-radius: 10px;
+    padding: 3px;
   }
-  
+  .project-list-item:hover {
+    box-shadow: 5px 5px 30px 10px var(--boxCol);
+  }
+
   @keyframes drop {
     from {
       transform: translateY(-200%);
@@ -534,11 +529,16 @@ body {
     flex-direction: column;
     display: none;
     column-gap: 3px;
-    background: purple;
+
     padding:2px;
     border-radius: 5px;
   }
   
+  .project-hovered {
+    box-shadow: 5px 5px 30px 10px var(--boxCol);
+  }
+
+
   .project-list-item-actions button {
     background: var(--card-gradient);
     border: none;

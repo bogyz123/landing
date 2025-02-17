@@ -21,8 +21,7 @@ const popProject = (popType, projects) => {
       projects.forEach((project) => {
         const element = document.getElementById(project);
         if (element) {
-          element.style.scale = "1.1";
-          element.style.color = "crimson";
+          element.classList.add("project-hovered");
         }
       });
       break;
@@ -31,9 +30,7 @@ const popProject = (popType, projects) => {
       projects.forEach((project) => {
         const element = document.getElementById(project);
         if (element) {
-          element.style.scale = "1";
-          element.style.padding = "0";
-          element.style.color = "white";
+          element.classList.remove("project-hovered");
         }
       });
       break;
@@ -93,13 +90,7 @@ const shuffleText = (element) => {
   }, 30); // 30 seems ok
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const skills = document.querySelectorAll("[data-value]");
-  skills.forEach((skill) => {
-    shuffleText(skill);
-  });
-  tsParticles.load("tsparticles", options).catch(() => {});
-});
+
 
 const setOpeningWarning = (website) => {
   urlToOpen = website;
@@ -134,7 +125,7 @@ const handleLink = (status) => {
 
 const handleMenu = () => {
   const menu = document.getElementById("menu");
-  menu.classList.toggle('visible'); // Toggle visibility class
+  menu.classList.toggle('visible'); 
 }
 
 
@@ -273,3 +264,129 @@ const options = {
     }
   }
 };
+
+const projects = [
+  {
+    id: "AL",
+    name: "Animlib",
+    url: "https://www.github.com/bogyz123/animlib",
+    preview: "animlib",
+    delay: "0",
+    tech: null
+  },
+  {
+    id: "SS",
+    name: "Sharepictures",
+    url: "https://www.github.com/bogyz123/sharepictures",
+    preview: "sharepictures",
+    delay: "200ms",
+    tech: null
+  },
+  {
+    id: "CX",
+    name: "Codebox",
+    url: "https://www.github.com/bogyz123/codebox",
+    preview: "codebox",
+    delay: "400ms",
+    tech: null
+  },
+  {
+    id: "SNKRS",
+    name: "SNKRS",
+    url: "https://www.github.com/bogyz123/SNKRS",
+    preview: "snkrs",
+    delay: "600ms",
+    tech: null
+  },
+  {
+    id: "LY",
+    name: "Linkify",
+    url: "https://www.github.com/bogyz123/urlshort",
+    preview: "linkify",
+    delay: "800ms",
+    tech: null
+  },
+  {
+    id: "PC",
+    name: "ProxyChecker API",
+    url: "https://www.github.com/bogyz123/proxyworks",
+    preview: "proxychecker",
+    delay: "1s",
+    tech: null
+  },
+  {
+    id: "KR",
+    name: "KinoRS",
+    url: "https://www.github.com/bogyz123/kinors",
+    preview: "kinors",
+    delay: "1.2s",
+    tech: null
+  },
+  {
+    id: "IL",
+    name: "Instalock (C#)",
+    url: "https://www.github.com/bogyz123/instalock",
+    preview: "instalock",
+    delay: "1.4s",
+    tech: "C#"
+  },
+  {
+    id: "MG",
+    name: "MemGO (GOLANG)",
+    url: "https://www.github.com/bogyz123/memgo",
+    preview: "memgo",
+    delay: "1.6s",
+    tech: "GOLANG"
+  },
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+  const skills = document.querySelectorAll("[data-value]");
+  skills.forEach((skill) => {
+    shuffleText(skill);
+  });
+  tsParticles.load("tsparticles", options).catch(() => {});
+  const projectList = document.querySelector(".project-list"); 
+
+if (projectList) {
+  projects.forEach((p) => {
+    const container = document.createElement("div");
+    container.classList.add("project-list-item");
+    container.style.animationDelay = p.delay;
+    container.setAttribute("data-text", p.name);
+
+
+    const li = document.createElement("li");
+    li.id = p.id;
+    li.onclick = () => openUrl(p.url, li);
+    li.textContent = p.name;
+
+    container.appendChild(li);
+
+    const actions = document.createElement("div");
+    actions.classList.add("project-list-item-actions");
+
+    const openWebsiteButton = document.createElement("button");
+    openWebsiteButton.onclick = () => setOpeningWarning(p.url);
+    openWebsiteButton.textContent = "Open website";
+
+    const previewWebsiteButton = document.createElement("button");
+    previewWebsiteButton.onclick = () => previewWebsite(p.preview);
+    previewWebsiteButton.textContent = "Preview website";
+
+    actions.appendChild(openWebsiteButton);
+    actions.appendChild(previewWebsiteButton);
+    container.appendChild(actions);
+
+    projectList.appendChild(container); 
+  });
+}
+});
+/** <div class="project-list-item" style="animation-delay: 1600ms;">
+        <li id="AL" onclick="openUrl('https://www.github.com/bogyz123/animlib', this)">Animlib</li>
+        <div class="project-list-item-actions">
+          <button onclick="setOpeningWarning('https://www.github.com/bogyz123/animlib')">Open website</button>
+          <button onclick="previewWebsite('animlib')" data-project="animlib">Preview website</button>
+        </div>
+      </div> 
+      */
