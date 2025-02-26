@@ -5,7 +5,7 @@
   --bg-col: rgb(89, 4, 123);
   --card-gradient: radial-gradient(circle, rgb(52, 19, 93) 10%, rgb(53, 7, 57) 100%);
   --card-border: 1px solid hotpink;
-  --shineTimer: 3s;
+  --shineTimer: 4s;
 }
 
 .darkmode {
@@ -55,28 +55,25 @@ body {
 }
 
 #disclaimer {
-  color: #fff;
-  background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
-  background-position: 0;
+  color: transparent;
+  background: linear-gradient(to right, #9f9f9f 0%, #fff 10%, #868686 20%);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   animation: moveBg var(--shineTimer) infinite linear;
-  animation-fill-mode: forwards;
-  -webkit-text-size-adjust: none;
-  text-decoration: none;
   font-family: Montserrat, sans-serif;
+  text-decoration: none;
+
 }
+
 @keyframes moveBg {
   0% {
-    background-position: -100px;
-  }
-  50% {
-    background-position: 500px;
+    background-position: -1000px;
   }
   100% {
     background-position: 1000px;
   }
 }
+
 
 .hamburger {
   color: white;
@@ -184,7 +181,7 @@ body {
     display: none;
   }
   :root {
-    --shineTimer: 5s;
+    --shineTimer: 10s;
   }
 }
 
@@ -612,6 +609,7 @@ z-index: 1000;
 opacity: 1; 
 display: none;
 font-family: Montserrat, Arial, sans-serif;
+will-change: transform;
 }
 
 #gitz {

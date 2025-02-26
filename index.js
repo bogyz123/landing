@@ -54,6 +54,7 @@ const openUrl =  (url, caller) => {
   urlToOpen = url;
   const item = caller?.closest(".project-list-item").querySelector(".project-list-item-actions");
   const allActions = document.querySelectorAll(".project-list-item-actions");
+  console.log(item);
   allActions.forEach((el) => {
     if (el !== item) {
       el.style.display = "none";
@@ -207,7 +208,6 @@ const previewWebsite = async (website) => {
     techLi.textContent = technology;
     technologyContainer.appendChild(techLi);
   });
-  
   previewContainer.style.display = "flex";
 };
 
@@ -254,7 +254,7 @@ const options = {
     },
     move: {
       enable: true,
-      speed: { min: 1, max: 3 }
+      speed: { min: 1, max: 2 }
     },
     opacity: {
       value: { min: 0.3, max: 0.7 }
@@ -358,8 +358,8 @@ if (projectList) {
 
     const li = document.createElement("li");
     li.id = p.id;
-    li.onclick = () => openUrl(p.url, li);
     li.textContent = p.name;
+    li.onclick = () => openUrl(p.url, li);
 
     container.appendChild(li);
 
