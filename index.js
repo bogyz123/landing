@@ -4,7 +4,7 @@ const scaleNav = (action) => {
   if (!nav) return;
   switch (action) {
     case "scale": {
-      nav.style.scale = "1.2";
+      nav.style.scale = "1.05";
       break;
     }
     case "descale": {
@@ -88,7 +88,7 @@ const shuffleText = (element) => {
     }
     
     iteration += 1;
-  }, 30); // 30 seems ok
+  }, 90); // 30 seems ok
 };
 
 
@@ -377,7 +377,6 @@ if (projectList) {
     actions.appendChild(openWebsiteButton);
     actions.appendChild(previewWebsiteButton);
     container.appendChild(actions);
-
     projectList.appendChild(container); 
   });
 }

@@ -266,6 +266,7 @@ body {
   column-gap: 5vw;
   text-transform: uppercase;
   padding: 10px;
+  font-size: 1.2rem;
 }
 
 #skills__list .skill {
@@ -273,13 +274,34 @@ body {
   display: flex;
   align-items: center;
   column-gap: 5px;
-  width: fit-content;
+  width: max-content;
   cursor: pointer;
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
-  transition: color 0.3s ease-in;
+  transition: color 0.5s ease-in;
   position: relative;
   user-select: none;
+  overflow:hidden;
+  width: 100%;
+  font-weight: bold;
+
+}
+#skills__list .skill::before {
+  content: attr(data-value);
+  position: absolute;
+  left: 0;
+  top: -100%;
+  transition: all 0.3s ease;
+  color: rgb(73, 2, 167);
+  font-weight: bold;
+  opacity: 0;
+}
+#skills__list .skill:hover::before {
+  top: 0;
+ opacity: 1;
+}
+#skills__list .skill:hover {
+  color: transparent;
 }
 
 .connector {
@@ -870,7 +892,18 @@ color: rgb(235, 22, 86);
   border: 2px solid purple;
   border-radius: 10px;
   }
-  
+
   #AL {
   color: rgb(235, 22, 86);
+  font-weight: bold;
+  position: relative;
+  }
+  #AL::after {
+    content: "new";
+    position: absolute;
+    right:0;
+    padding-block:5px;
+    bottom: -5px;
+    font-size: 0.5rem;
+    
   }
