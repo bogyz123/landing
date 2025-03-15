@@ -25,6 +25,7 @@
   </label>
   
   <div id="menu">
+    <button onclick="setOpeningWarning('https://www.github.com/bogyz123/insajder')">Insajder</button>
     <button onclick="setOpeningWarning('https://www.github.com/bogyz123/sharepictures')">SharePictures</button>
     <button onclick="setOpeningWarning('https://www.github.com/bogyz123/animlib')">AnimLib</button>
     <button onclick="setOpeningWarning('https://www.github.com/bogyz123/snkrs')">SNKRS</button>
@@ -83,13 +84,13 @@
       <p class="about__title">SKILLS</p>
       <div class="center" id="disclaimer">These are the technologies that I've used throughout my projects! (You can hover over to see what projects are using them)</div>
       <ul id="skills__list">
-        <li class="skill" data-value="HTML & CSS" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC', 'KR', 'AL'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC', 'KR', 'AL'])">
+        <li class="skill" data-value="HTML & CSS" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC', 'KR', 'AL', 'IR'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC', 'KR', 'AL', 'IR'])">
           HTML & CSS
         </li>
-        <li class="skill" data-value="JavaScript" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC', 'AL', 'KR'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC', 'AL', 'KR'])">
+        <li class="skill" data-value="JavaScript" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC', 'AL', 'KR', 'IR'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'LY', 'CE', 'PC', 'AL', 'KR', 'IR'])">
           JavaScript
         </li>
-        <li class="skill" data-value="React.JS" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE', 'KR', 'LY', 'AL'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE', 'KR', 'LY', 'AL'])">
+        <li class="skill" data-value="React.JS" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE', 'KR', 'LY', 'AL', 'IR'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE', 'KR', 'LY', 'AL', 'IR'])">
           React.JS
         </li>
         <li class="skill" data-value="C#" onmouseover="popProject('pop', ['IL'])" onmouseleave="popProject('unpop', ['IL'])">
@@ -99,21 +100,21 @@
           Golang
         </li>
 
-        <li class="skill" data-value="Node & Express" onmouseover="popProject('pop', ['LY', 'PC'])" onmouseleave="popProject('unpop', ['LY', 'PC'])">
+        <li class="skill" data-value="Node & Express" onmouseover="popProject('pop', ['LY', 'PC', 'IR'])" onmouseleave="popProject('unpop', ['LY', 'PC', 'IR'])">
           Node & Express
         </li>
         <li class="skill" data-value="Firebase" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE'])">
           Firebase
         </li>
 
-        <li class="skill" data-value="MongoDB" onmouseover="popProject('pop', ['LY'])" onmouseleave="popProject('unpop', ['LY'])">
+        <li class="skill" data-value="MongoDB" onmouseover="popProject('pop', ['LY', 'IR'])" onmouseleave="popProject('unpop', ['LY', 'IR'])">
           MongoDB
         </li>
-        <li class="skill" data-value="Redux & Redux-Persist" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE'])">
+        <li class="skill" data-value="Redux & Redux-Persist" onmouseover="popProject('pop', ['SS', 'CX', 'SNKRS', 'CE', 'IR'])" onmouseleave="popProject('unpop', ['SS', 'CX', 'SNKRS', 'CE', 'IR'])">
           Redux & Redux-Persist
         </li>
 
-        <li class="skill" data-value="EmailJS, ChartJS & QRJs" onmouseover="popProject('pop', ['SNKRS', 'LY'])" onmouseleave="popProject('unpop', ['SNKRS', 'LY'])">EmailJS, ChartJS & QRJs</li>
+        <li class="skill" data-value="EmailJS, ChartJS & QRJs" onmouseover="popProject('pop', ['SNKRS', 'LY', 'IR'])" onmouseleave="popProject('unpop', ['SNKRS', 'LY', 'IR'])">EmailJS, ChartJS & QRJs</li>
       </ul>
       <div id="gitz">
         <img src="arrow.png" alt="arrow pointing right">
@@ -202,6 +203,14 @@
               <button onclick="window.open('https://github.com/bogyz123/animlib', '_blank')">check it on github!</button>
           </div>
         </div>
+        <div class="previewer-project" onclick="previewerExpandContent(event)">
+          <div class="previewer-project-title">Insajder</div>
+          <div class="previewer-project-expander">
+              <span>Insajder is a in production paid betting platform that supports betting statistics, arbitrary betting finder & calculator, best odds checker, chatting with other people and premium/free tips UI.</span>
+              <button onclick="window.open('https://github.com/bogyz123/insajder', '_blank')">check it on github!</button>
+          </div>
+        </div>
+        
         <span style="margin-top: 5px; border-left: 1px solid gray; padding-left: 5px;">Note that these are some of the projects I've worked on. My first real project was a Proxy Checker created in VB.NET 5 years ago, I didn't have a habit of saving projects because they were mainly used for learning so many of them are gone.</span>
         <span style="margin-top: 5px; border-left: 1px solid gray; padding-left: 5px;">After switching from C# to Web Development, I opted for React.js mainly because of it's popularity and usage. It's very convenient to combine with Tailwind and for backend Node.js, well, any technology goes well with React.</span>
         <span style="margin-top: 5px; border-left: 1px solid gray; padding-left: 5px;">As much as I like CSS and frontend, I will forever like backend the same, my first real project I've mentioned was a backend project, I also created it in Node.JS, besides that I have a Golang memory library and a C# software that interacts with a Game Client.</span>

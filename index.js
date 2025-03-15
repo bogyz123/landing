@@ -42,7 +42,6 @@ var urlToOpen = null;
 var openedNode;
 
 const unpop = (project) => {
-
   const element = document.getElementById(project);
   if (element) {
     element.style.scale = "1";
@@ -50,9 +49,11 @@ const unpop = (project) => {
   }
 };
 
-const openUrl =  (url, caller) => {
+const openUrl = (url, caller) => {
   urlToOpen = url;
-  const item = caller?.closest(".project-list-item").querySelector(".project-list-item-actions");
+  const item = caller
+    ?.closest(".project-list-item")
+    .querySelector(".project-list-item-actions");
   const allActions = document.querySelectorAll(".project-list-item-actions");
   console.log(item);
   allActions.forEach((el) => {
@@ -82,16 +83,14 @@ const shuffleText = (element) => {
         return letters[Math.floor(Math.random() * 26)];
       })
       .join("");
-    
-    if (iteration >= element.dataset.value.length) { 
+
+    if (iteration >= element.dataset.value.length) {
       clearInterval(interval);
     }
-    
+
     iteration += 1;
   }, 90); // 30 seems ok
 };
-
-
 
 const setOpeningWarning = (website) => {
   urlToOpen = website;
@@ -126,15 +125,14 @@ const handleLink = (status) => {
 
 const handleMenu = () => {
   const menu = document.getElementById("menu");
-  menu.classList.toggle('visible'); 
-}
-
+  menu.classList.toggle("visible");
+};
 
 const previewGit = () => {
   const previewContainer = document.getElementById("git-previewer");
   if (previewContainer) {
-    previewContainer.style.animation = "previewAppear 2s forwards"; 
-    previewContainer.style.display = "flex"; 
+    previewContainer.style.animation = "previewAppear 2s forwards";
+    previewContainer.style.display = "flex";
   }
 };
 
@@ -142,9 +140,13 @@ const closePreviewer = () => {
   const previewContainer = document.getElementById("git-previewer");
   if (previewContainer) {
     previewContainer.style.animation = "previewDisappear 2s forwards";
-    previewContainer.addEventListener("animationend", () => {
-      previewContainer.style.display = "none";
-    }, { once: true });
+    previewContainer.addEventListener(
+      "animationend",
+      () => {
+        previewContainer.style.display = "none";
+      },
+      { once: true }
+    );
   }
 };
 
@@ -153,10 +155,10 @@ const toggleDarkMode = () => {
   const isDarkMode = body.classList.contains("darkmode");
   const moon = document.getElementById("moon");
   const sun = document.getElementById("sun");
-  
+
   body.classList.toggle("darkmode", !isDarkMode);
   body.classList.toggle("lightmode", isDarkMode);
-  
+
   if (moon && sun) {
     moon.style.opacity = isDarkMode ? "1" : "0";
     sun.style.opacity = isDarkMode ? "0" : "1";
@@ -164,7 +166,9 @@ const toggleDarkMode = () => {
 };
 
 const previewerExpandContent = (event) => {
-  const content = event.currentTarget.querySelector(".previewer-project-expander");
+  const content = event.currentTarget.querySelector(
+    ".previewer-project-expander"
+  );
   if (content) {
     content.style.display = content.style.display === "flex" ? "none" : "flex";
   }
@@ -173,11 +177,14 @@ const previewerExpandContent = (event) => {
 const previewWebsite = async (website) => {
   let data = null;
   const previewContainer = document.getElementById("project-preview-container");
-  const technologyContainer = document.getElementById("project-preview-technologies");
+  const technologyContainer = document.getElementById(
+    "project-preview-technologies"
+  );
   const previewIFrame = document.querySelector("iframe");
   const sademoji = document.getElementById("project-preview-sademoji");
 
-  if (!previewContainer || !technologyContainer || !previewIFrame || !sademoji) return;
+  if (!previewContainer || !technologyContainer || !previewIFrame || !sademoji)
+    return;
 
   try {
     const response = await fetch("./websiteDescriptions.json");
@@ -189,11 +196,12 @@ const previewWebsite = async (website) => {
   if (!data || !data[website]) return;
 
   technologyContainer.innerHTML = "";
-  
+
   if (!data[website].hasWebsite) {
     previewIFrame.style.display = "none";
     sademoji.style.display = "block";
-    previewContainer.querySelector("code").textContent = "This project has no website.";
+    previewContainer.querySelector("code").textContent =
+      "This project has no website.";
   } else {
     previewIFrame.style.display = "block";
     sademoji.style.display = "none";
@@ -201,7 +209,8 @@ const previewWebsite = async (website) => {
 
   previewIFrame.src = data[website].url;
   previewContainer.querySelector("h1").textContent = data[website].title;
-  previewContainer.querySelector("#project-preview-description").textContent = data[website].description;
+  previewContainer.querySelector("#project-preview-description").textContent =
+    data[website].description;
 
   data[website].technologies.forEach((technology) => {
     const techLi = document.createElement("li");
@@ -224,45 +233,45 @@ const closePreview = () => {
 
 const options = {
   background: {
-    color: "inherit"
+    color: "inherit",
   },
   interactivity: {
     events: {
       onClick: {
         enable: true,
-        mode: "push"
+        mode: "push",
       },
       onHover: {
         enable: true,
-        mode: "repulse"
-      }
+        mode: "repulse",
+      },
     },
     modes: {
       push: {
-        quantity: 6
+        quantity: 6,
       },
       repulse: {
-        distance: 100
-      }
-    }
+        distance: 100,
+      },
+    },
   },
   particles: {
     links: {
       enable: true,
       opacity: 0.3,
-      distance: 200
+      distance: 200,
     },
     move: {
       enable: true,
-      speed: { min: 1, max: 2 }
+      speed: { min: 1, max: 2 },
     },
     opacity: {
-      value: { min: 0.3, max: 0.7 }
+      value: { min: 0.3, max: 0.7 },
     },
     size: {
-      value: { min: 1, max: 3 }
-    }
-  }
+      value: { min: 1, max: 3 },
+    },
+  },
 };
 
 const projects = [
@@ -272,71 +281,71 @@ const projects = [
     url: "https://www.github.com/bogyz123/animlib",
     preview: "animlib",
     delay: "0",
-    tech: null
+    tech: null,
+  },
+  {
+    id: "IR",
+    name: "Insajder",
+    url: "https://www.github.com/bogyz123/insajder",
+    preview: "insajder",
+    delay: "200ms",
+    tech: null,
   },
   {
     id: "SS",
     name: "Sharepictures",
     url: "https://www.github.com/bogyz123/sharepictures",
     preview: "sharepictures",
-    delay: "200ms",
-    tech: null
+    delay: "400ms",
+    tech: null,
   },
   {
     id: "CX",
     name: "Codebox",
     url: "https://www.github.com/bogyz123/codebox",
     preview: "codebox",
-    delay: "400ms",
-    tech: null
+    delay: "600ms",
+    tech: null,
   },
   {
     id: "SNKRS",
     name: "SNKRS",
     url: "https://www.github.com/bogyz123/SNKRS",
     preview: "snkrs",
-    delay: "600ms",
-    tech: null
+    delay: "700ms",
+    tech: null,
   },
   {
     id: "LY",
     name: "Linkify",
     url: "https://www.github.com/bogyz123/urlshort",
     preview: "linkify",
-    delay: "800ms",
-    tech: null
+    delay: "1s",
+    tech: null,
   },
   {
     id: "PC",
     name: "ProxyChecker API",
     url: "https://www.github.com/bogyz123/proxyworks",
     preview: "proxychecker",
-    delay: "1s",
-    tech: null
+    delay: "1.2s",
+    tech: null,
   },
   {
     id: "KR",
     name: "KinoRS",
     url: "https://www.github.com/bogyz123/kinors",
     preview: "kinors",
-    delay: "1.2s",
-    tech: null
+    delay: "1.4s",
+    tech: null,
   },
   {
     id: "IL",
     name: "Instalock (C#)",
     url: "https://www.github.com/bogyz123/instalock",
     preview: "instalock",
-    delay: "1.4s",
-    tech: "C#"
-  },
-  {
-    id: "MG",
-    name: "MemGO (GOLANG)",
-    url: "https://www.github.com/bogyz123/memgo",
-    preview: "memgo",
     delay: "1.6s",
-    tech: "GOLANG"
+    tech: "C#",
   },
 ];
 
@@ -346,40 +355,39 @@ document.addEventListener("DOMContentLoaded", () => {
     shuffleText(skill);
   });
   tsParticles.load("tsparticles", options).catch(() => {});
-  const projectList = document.querySelector(".project-list"); 
+  const projectList = document.querySelector(".project-list");
 
-if (projectList) {
-  projects.forEach((p) => {
-    const container = document.createElement("div");
-    container.classList.add("project-list-item");
-    container.style.animationDelay = p.delay;
-    container.setAttribute("data-text", p.name);
+  if (projectList) {
+    projects.forEach((p) => {
+      const container = document.createElement("div");
+      container.classList.add("project-list-item");
+      container.style.animationDelay = p.delay;
+      container.setAttribute("data-text", p.name);
 
+      const li = document.createElement("li");
+      li.id = p.id;
+      li.textContent = p.name;
+      li.onclick = () => openUrl(p.url, li);
 
-    const li = document.createElement("li");
-    li.id = p.id;
-    li.textContent = p.name;
-    li.onclick = () => openUrl(p.url, li);
+      container.appendChild(li);
 
-    container.appendChild(li);
+      const actions = document.createElement("div");
+      actions.classList.add("project-list-item-actions");
 
-    const actions = document.createElement("div");
-    actions.classList.add("project-list-item-actions");
+      const openWebsiteButton = document.createElement("button");
+      openWebsiteButton.onclick = () => setOpeningWarning(p.url);
+      openWebsiteButton.textContent = "Open website";
 
-    const openWebsiteButton = document.createElement("button");
-    openWebsiteButton.onclick = () => setOpeningWarning(p.url);
-    openWebsiteButton.textContent = "Open website";
+      const previewWebsiteButton = document.createElement("button");
+      previewWebsiteButton.onclick = () => previewWebsite(p.preview);
+      previewWebsiteButton.textContent = "Preview website";
 
-    const previewWebsiteButton = document.createElement("button");
-    previewWebsiteButton.onclick = () => previewWebsite(p.preview);
-    previewWebsiteButton.textContent = "Preview website";
-
-    actions.appendChild(openWebsiteButton);
-    actions.appendChild(previewWebsiteButton);
-    container.appendChild(actions);
-    projectList.appendChild(container); 
-  });
-}
+      actions.appendChild(openWebsiteButton);
+      actions.appendChild(previewWebsiteButton);
+      container.appendChild(actions);
+      projectList.appendChild(container);
+    });
+  }
 });
 /** <div class="project-list-item" style="animation-delay: 1600ms;">
         <li id="AL" onclick="openUrl('https://www.github.com/bogyz123/animlib', this)">Animlib</li>
